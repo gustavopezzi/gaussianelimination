@@ -20,7 +20,7 @@ void printMatrix(int N, float A[20][21]) {
  * param N is the number of unknowns
  * param A is the matrix with coefficients and constants
  */
-int gauss(int N, float A [20][21], float r[20]) {
+int gauss(int N, float A[20][21], float r[20]) {
     float multiplier, divider;
     bool fin = false;
     
@@ -28,14 +28,14 @@ int gauss(int N, float A [20][21], float r[20]) {
 
     // forward substitution
     for (int m = 0; m <= N; m++) {
-        for (int i=m+1; i<=N; i++) {
+        for (int i = m + 1; i <= N; i++) {
             multiplier = A[i][m]; 
             divider = A[m][m]; 
             
             if (divider == 0)
                 return 1;
             
-            for (int j=m; j<=N; j++) {
+            for (int j = m; j <= N; j++) {
                 if (i == N) {
                     break;
                     fin = true;
@@ -56,14 +56,14 @@ int gauss(int N, float A [20][21], float r[20]) {
     float s = 0;
     r[N-1] = A[N-1][N];
     int y = 0;
-    for (int i = N-2; i >= 0; i--) {
+    for (int i = N - 2; i >= 0; i--) {
         s = 0;
         y++;
         
         for (int x = 0; x < N; x++) {
-            s = s + (A[i][N-1-x] * r[N-(x+1)]);
+            s = s + (A[i][N - 1 - x] * r[N - (x + 1)]);
             
-            if (y == x+1)
+            if (y == x + 1)
                 break;
         }
         
