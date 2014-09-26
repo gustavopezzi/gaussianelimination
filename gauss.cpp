@@ -44,8 +44,8 @@ int gauss(int N, float A[20][21], float r[20]) {
                 A[i][j] = (A[m][j] * multiplier / divider) - A[i][j];
             }
             
-            for (int j=m; j<=N; j++)
-                A[i-1][j] = A[i-1][j] / divider;
+            for (int j = m; j <= N; j++)
+                A[i - 1][j] = A[i - 1][j] / divider;
             
             if (fin)
                 break;
